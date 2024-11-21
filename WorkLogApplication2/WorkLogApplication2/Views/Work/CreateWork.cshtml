@@ -1,0 +1,23 @@
+﻿@model List<Employee>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Create Work</h2>
+
+<form action="/Work/CreateWork" method="post">
+
+    <select name="EmployeeId">
+        @foreach (Employee employee in Model)
+        {
+            <option value="@employee.Id">@employee.Name</option>
+        }
+    </select>
+
+    <input type="number" name="Time" placeholder="Minutes" />
+    <input type="text" name="WorkDescription" placeholder="WorkDescription" />
+
+    <button>Create Work</button>
+</form>

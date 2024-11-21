@@ -1,0 +1,24 @@
+﻿@model Work
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Edit Work</h2>
+
+<form action="/Work/EditWork/@Model.Id" method="post">
+    <input type="number" name="Time" value="@Model.Time" />
+    <input type="text" name="WorkDescription" value="@Model.WorkDescription" />
+
+
+    <select asp-for=EmployeeId name="EmployeeId">
+        @foreach (var employee in ViewBag.Employees)
+        {
+            <option value="@employee.Id">
+                @employee.Name</option>
+        }
+    </select>
+    <button>Edit</button>
+</form>

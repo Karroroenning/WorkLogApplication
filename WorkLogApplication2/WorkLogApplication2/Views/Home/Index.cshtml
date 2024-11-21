@@ -1,0 +1,16 @@
+﻿@model List<HomeIndexViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This is my worklog App.</p>
+</div>
+
+
+
+@foreach (HomeIndexViewModel work in Model)
+{
+    <p>@work.WorkName gjort av @work.EmployeeName i @work.WorkTime Minuter</p>
+}
